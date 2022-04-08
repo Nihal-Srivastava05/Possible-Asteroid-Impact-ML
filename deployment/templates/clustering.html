@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home page
+{% endblock %}
+
+{% block content %}
+  <h1>Clustering</h1>
+
+  
+  <h3>Enter the following information to cluster the asteriod: </h3>
+  <form action="{{ url_for('impacts_page')}}" method="post">
+    <label for="start" class="form-label">Period Start</label>
+    <input type="text" name="start" class="form-control" />
+
+    <label for="end" class="form-label">Period End</label>
+    <input type="text" name="end" class="form-control" />
+
+    <label for="impacts" class="form-label">Possible Impacts</label>
+    <input type="text" name="impacts" class="form-control" />
+
+    <label for="probability" class="form-label">Cumulative Impact Probability</label>
+    <input type="text" name="probability" class="form-control" />
+
+    <label for="velocity" class="form-label">Asteroid Velocity</label>
+    <input type="text" name="velocity" class="form-control" />
+
+    <label for="magnitude" class="form-label">Asteroid Magnitude</label>
+    <input type="text" name="magnitude" class="form-control" />
+
+    <label for="diameter" class="form-label">Asteroid Diameter (km))</label>
+    <input type="text" name="diameter" class="form-control" />
+
+    <label for="cpalermo" class="form-label">Cumulative Palermo Scale</label>
+    <input type="text" name="palermo" class="form-control" />
+
+    <label for="mpalermo" class="form-label">Maximum Palermo Scale</label>
+    <input type="text" name="mpalermo" class="form-control" />
+
+    <label for="torino" class="form-label">Maximum Torino Scale</label>
+    <input type="text" name="torino" class="form-control" />
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+{% endblock %}

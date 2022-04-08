@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home page
+{% endblock %}
+
+{% block content %}
+  <h1>Asteroid Classification</h1>
+
+  <h3>Enter the following information to classify the asteriod: </h3>
+  <form action="{{ url_for('classification_page')}}" method="post">
+    <label for="epoch" class="form-label">Epoch (TDB)</label>
+    <input type="text" name="epoch" class="form-control" />
+    
+    <label for="axis" class="form-label">Orbit Axis (AU)</label>
+    <input type="text" name="axis" class="form-control" />
+
+    <label for="eccentricity" class="form-label">Orbit Eccentricity</label>
+    <input type="text" name="eccentricity" class="form-control" />
+
+    <label for="inclination" class="form-label">Orbit Inclination (deg)</label>
+    <input type="text" name="inclination" class="form-control" />
+
+    <label for="argument" class="form-label">Perihelion Argument (deg)</label>
+    <input type="text" name="argument" class="form-control" />
+
+    <label for="longitude" class="form-label">Node Longitude (deg)</label>
+    <input type="text" name="longitude" class="form-control" />
+
+    <label for="anomoly" class="form-label">Mean Anomoly (deg)</label>
+    <input type="text" name="anomoly" class="form-control" />
+
+    <label for="perihelion" class="form-label">Perihelion Distance (AU)</label>
+    <input type="text" name="perihelion" class="form-control" />
+
+    <label for="aphelion" class="form-label">Aphelion Distance (AU)</label>
+    <input type="text" name="aphelion" class="form-control" />
+
+    <label for="period" class="form-label">Orbital Period (yr)</label>
+    <input type="text" name="period" class="form-control" />
+
+    <label for="intersection" class="form-label">Minimum Orbit Intersection Distance (AU)</label>
+    <input type="text" name="intersection" class="form-control" />
+
+    <label for="reference" class="form-label">Orbital Reference</label>
+    <input type="text" name="reference" class="form-control" />
+
+    <label for="magnitude" class="form-label">Asteroid Magnitude</label>
+    <input type="text" name="magnitude" class="form-control" />
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+{% endblock %}
