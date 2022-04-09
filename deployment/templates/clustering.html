@@ -9,7 +9,7 @@ Home page
 
   
   <h3>Enter the following information to cluster the asteriod: </h3>
-  <form action="{{ url_for('impacts_page')}}" method="post">
+  <form action="{{ url_for('clustering_page')}}" method="post">
     <label for="start" class="form-label">Period Start</label>
     <input type="text" name="start" class="form-control" />
 
@@ -32,7 +32,7 @@ Home page
     <input type="text" name="diameter" class="form-control" />
 
     <label for="cpalermo" class="form-label">Cumulative Palermo Scale</label>
-    <input type="text" name="palermo" class="form-control" />
+    <input type="text" name="cpalermo" class="form-control" />
 
     <label for="mpalermo" class="form-label">Maximum Palermo Scale</label>
     <input type="text" name="mpalermo" class="form-control" />
