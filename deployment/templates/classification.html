@@ -4,6 +4,10 @@
 Home page
 {% endblock %}
 
+{% block links %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/classification.css') }}">
+{% endblock %}
+
 {% block content %}
   <h1>Asteroid Classification</h1>
 
@@ -48,6 +52,11 @@ Home page
     <label for="magnitude" class="form-label">Asteroid Magnitude</label>
     <input type="text" name="magnitude" class="form-control" />
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary submit-btn">Submit</button>
   </form>
+
+  {% if res %}
+    <h3>The Asteriod is: {{ classification }}</h3>
+  {% endif %}
+
 {% endblock %}

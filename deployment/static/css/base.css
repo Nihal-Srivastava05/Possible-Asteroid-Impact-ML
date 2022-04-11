@@ -1,7 +1,4 @@
 .page_content {
     margin: 2rem;
-}
-
-body {
-    background-image: url("{{ url_for('static', filename='img/spaceBG.jpg') }}");
+    padding: 1rem;
 }

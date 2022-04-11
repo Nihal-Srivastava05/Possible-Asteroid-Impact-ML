@@ -4,6 +4,10 @@
 Home page
 {% endblock %}
 
+{% block links %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/impacts.css') }}">
+{% endblock %}
+
 {% block content %}
   <h1>Possible Impact Prediction</h1>
 
@@ -36,6 +40,10 @@ Home page
     <label for="torino" class="form-label">Maximum Torino Scale</label>
     <input type="text" name="torino" class="form-control" />
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary submit-btn">Submit</button>
   </form>
+
+  {% if res %}
+    <h3>The Possible impact is: {{ prediction }}</h3>
+  {% endif %}
 {% endblock %}
