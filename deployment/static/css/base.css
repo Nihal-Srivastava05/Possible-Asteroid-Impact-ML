@@ -2,6 +2,8 @@
     margin: 2rem;
 }
 
-body {
-    background-image: url("{{ url_for('static', filename='img/spaceBG.jpg') }}");
-}
+
+
+body{
+    background-image: url("{{url_for('static', filename='img/spaceBG.jpg')}}");
+  }

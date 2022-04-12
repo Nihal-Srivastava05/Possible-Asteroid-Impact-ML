@@ -9,7 +9,7 @@ Visualizations
       .row {
         display: flex;
         flex-wrap: wrap;
-        padding: 0 4px;
+        margin-left: 10rem;
       }
 
       /* Create four equal columns that sits next to each other */
@@ -17,6 +17,7 @@ Visualizations
         flex: 25%;
         max-width: 25%;
         padding: 0 4px;
+        margin: 1rem;
       }
 
       .column img {
@@ -40,6 +41,8 @@ Visualizations
           max-width: 100%;
         }
       }
+
+      
   </style>
   <h1>Data Visualization</h1>
   <div class="row">
@@ -55,26 +58,19 @@ Visualizations
       <img src="{{url_for('static', filename='img/object_distance_scatter.png')}}"><p>This plot shows us each type of asteroid along  with its perhilion and aphelion distance from earth. We cn see that each asteroid has been distributed evenyl through the perhilion distance  but on the other hand it is skewed more towards the left for  the aphelion distance</p>
       <img src="{{url_for('static', filename='img/objectcountbar.png')}}"><p>A simple bar chart to show the number of each type of asteroid surrounding the earth</p>
       <img src="{{url_for('static', filename='img/orbit_distanecmagnitude_scatter.png')}}"><p>This shows a scatter  plot of each typeofobject along with its distance from earth</p>
-      <img src="mountainskies.jpg">
-      <img src="rocks.jpg">
-      <img src="underwater.jpg">
+      <img src="{{url_for('static', filename='img/orbit_distributionplot.png')}}"><p>This is again an interesting plot showing all the types of asteroid and how they are distributed with respect to their magnitudes.</p>
+      <img src="{{url_for('static', filename='img/orbit_objectlongitude_scatter.png')}}"><p>Scatter distribtution of all asteroids according to their longitude from earth</p>
+      <img src="{{url_for('static', filename='img/orbit_periodaxis_regplot.png')}}"><p>Regression plot for finding the relation between the orbit axis of an asteroid and its timeperiod for one revolution</p>
+
     </div>
     <div class="column">
-      <img src="wedding.jpg">
-      <img src="rocks.jpg">
-      <img src="falls2.jpg">
-      <img src="paris.jpg">
-      <img src="nature.jpg">
-      <img src="mist.jpg">
-      <img src="paris.jpg">
-    </div>
-    <div class="column">
-      <img src="underwater.jpg">
-      <img src="ocean.jpg">
-      <img src="wedding.jpg">
-      <img src="mountainskies.jpg">
-      <img src="rocks.jpg">
-      <img src="underwater.jpg">
+      <img src="{{url_for('static', filename='img/orbit_violin.png')}}"><p>A violin chart like the previous one, but this shows the features of the dataset on which we trained our classification model.Zoom in to see each plot clearly</p>
+      <img src="{{url_for('static', filename='img/orbit3dplot.png')}}"><p>A 3d scatter plot showing how  different classes of asteroid are distributed according to the magnitude and distance</p>
+      <img src="{{url_for('static', filename='img/orbitheatmap.png')}}"><p>Heatmap showing the correlation of all the features which were used to create  our classification model</p>
+      <img src="{{url_for('static', filename='img/orbitkdeplot.png')}}"><p>A density plot which further helps us to find the distrbution of asteroids overvarious distances</p>
+      <img src="{{url_for('static', filename='img/orbitobjects_kdeplot.png')}}"><p>A kdeplotto see the normal curvesof each object and how skewed or distributed they are with respect to their orbit axis</p>
     </div>
   </div>
+
+  
 {% endblock %}
