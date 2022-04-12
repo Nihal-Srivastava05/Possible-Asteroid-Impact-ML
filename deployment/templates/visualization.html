@@ -5,5 +5,76 @@ Visualizations
 {% endblock %}
 
 {% block content %}
+  <style>
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 4px;
+      }
+
+      /* Create four equal columns that sits next to each other */
+      .column {
+        flex: 25%;
+        max-width: 25%;
+        padding: 0 4px;
+      }
+
+      .column img {
+        margin-top: 8px;
+        vertical-align: middle;
+        width: 100%;
+      }
+
+      /* Responsive layout - makes a two column-layout instead of four columns */
+      @media screen and (max-width: 800px) {
+        .column {
+          flex: 50%;
+          max-width: 50%;
+        }
+      }
+
+      /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .column {
+          flex: 100%;
+          max-width: 100%;
+        }
+      }
+  </style>
   <h1>Data Visualization</h1>
+  <div class="row">
+    <div class="column">
+      <img src="{{url_for('static', filename='img/impact_cumprobab.png')}}" /><p>In this we can see the time period and the respective probability of impact</p>
+      <img src="{{url_for('static', filename='img/impact_possible_3dscatter.png')}}"><p>This shows the possible impacts, magnitude and velocity of asteroids around the earth</p>
+      <img src="{{url_for('static', filename='img/impact3dscatterplot.png')}}"><p>The above one showed possible impacts, thisvisualisation shows us the cumulative  impact probability. The other two axes remain the same</p>
+      <img src="{{url_for('static', filename='img/impacts_periodicpossibility.png')}}"><p>This plot  shows the time period of an asteroid and and its respective point point in its orbiting lifetime where it may impact earth.</p>
+      <img src="{{url_for('static', filename='img/impacts_violinplot.png')}}"><p>This is just a violin plot where in each feature is checked for its distribution and outliers. Zoom in to clearly vieweach feature  and its plot</p>
+      <img src="{{url_for('static', filename='img/impactsheatmap.png')}}"><p>This heatmap shows us the correlation of all the features in the dataset we  chose to train our model</p>
+    </div>
+    <div class="column">
+      <img src="{{url_for('static', filename='img/object_distance_scatter.png')}}"><p>This plot shows us each type of asteroid along  with its perhilion and aphelion distance from earth. We cn see that each asteroid has been distributed evenyl through the perhilion distance  but on the other hand it is skewed more towards the left for  the aphelion distance</p>
+      <img src="{{url_for('static', filename='img/objectcountbar.png')}}"><p>A simple bar chart to show the number of each type of asteroid surrounding the earth</p>
+      <img src="{{url_for('static', filename='img/orbit_distanecmagnitude_scatter.png')}}"><p>This shows a scatter  plot of each typeofobject along with its distance from earth</p>
+      <img src="mountainskies.jpg">
+      <img src="rocks.jpg">
+      <img src="underwater.jpg">
+    </div>
+    <div class="column">
+      <img src="wedding.jpg">
+      <img src="rocks.jpg">
+      <img src="falls2.jpg">
+      <img src="paris.jpg">
+      <img src="nature.jpg">
+      <img src="mist.jpg">
+      <img src="paris.jpg">
+    </div>
+    <div class="column">
+      <img src="underwater.jpg">
+      <img src="ocean.jpg">
+      <img src="wedding.jpg">
+      <img src="mountainskies.jpg">
+      <img src="rocks.jpg">
+      <img src="underwater.jpg">
+    </div>
+  </div>
 {% endblock %}
