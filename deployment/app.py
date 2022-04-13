@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, redirect, url_for
 import numpy as np
 import pickle
 
+from sklearn import cluster
+
 app = Flask(__name__, static_url_path='/static')
 
 @app.route('/')
@@ -35,7 +37,8 @@ def classification_page():
                           'Apollo Asteroid (Hazard)', 'Aten Asteroid',
                           'Aten Asteroid (Hazard)']
 
-        print(object_mapping[int(prediction[0])])
+        classification = object_mapping[int(prediction[0])]
+        return render_template('classification.html', res= True, classification = classification)
 
     return render_template('classification.html')
 
@@ -63,7 +66,7 @@ def impacts_page():
         X = scaler.transform([data])
 
         prediction = impact_model.predict(X)
-        print(prediction)
+        return render_template('impacts.html', res = True, prediction = prediction[0])
 
     return render_template('impacts.html')
 
@@ -87,7 +90,7 @@ def clustering_page():
         cluster_impact_mapping = {2:5, 5:4, 0:3, 4:2, 3:1, 1:0}
         prediction = clustering_model.predict([data])
         cluster_impact = cluster_impact_mapping[prediction[0]]
-        print(cluster_impact)
+        return render_template('clustering.html', res = True, cluster = cluster_impact)
 
     return render_template('clustering.html')
 

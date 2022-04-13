@@ -4,10 +4,13 @@
 Home page
 {% endblock %}
 
+{% block links %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/clustering.css') }}">
+{% endblock %}
+
 {% block content %}
   <h1>Clustering</h1>
 
-  
   <h3>Enter the following information to cluster the asteriod: </h3>
   <form action="{{ url_for('clustering_page')}}" method="post">
     <label for="start" class="form-label">Period Start</label>
@@ -40,6 +43,10 @@ Home page
     <label for="torino" class="form-label">Maximum Torino Scale</label>
     <input type="text" name="torino" class="form-control" />
     
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary submit-btn">Submit</button>
   </form>
+
+  {% if res %}
+    <h3>The Asteriod belongs to: {{ cluster }} cluster</h3>
+  {% endif %}
 {% endblock %}

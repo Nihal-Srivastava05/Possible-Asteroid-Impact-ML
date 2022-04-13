@@ -1,16 +1,16 @@
 .page_content {
-    margin: 2rem;
+  margin: 2rem;
 }
 
 body {
-    background-image: url("{{ url_for('static', filename='img/spaceBG.jpg') }}");
+  background-image: url("{{ url_for('static', filename='img/spaceBG.jpg') }}");
 }
 
 .video-container {
-    height: 100vh;
-    width: 99vw;
-    position: relative;
-    margin: -2rem;
+  height: 100vh;
+  width: 99vw;
+  position: absolute;
+  margin: -2rem;
 }
 
 .video-container video {
@@ -21,7 +21,6 @@ body {
   z-index: 0;
 }
 
-/* Just styling the content of the div, the magic in the previous rules */
 .video-container .caption {
   z-index: 1;
   position: relative;
@@ -29,5 +28,4 @@ body {
   color: #fdfdfd;
   background-color: rgba(191, 191, 191, 0.3);
   padding: 10px;
-  
 }
