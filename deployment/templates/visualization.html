@@ -5,5 +5,108 @@ Visualizations
 {% endblock %}
 
 {% block content %}
+  <style>
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 10rem;
+        margin-bottom: 10rem;
+      }
+
+      /* Create four equal columns that sits next to each other */
+      .column {
+        flex: 25%;
+        max-width: 25%;
+        padding: 0 10px;
+        margin: 2rem;
+      }
+
+      .column img {
+        margin-top: 8px;
+        vertical-align: middle;
+        width: 100%;
+      }
+
+      /* Responsive layout - makes a two column-layout instead of four columns */
+      @media screen and (max-width: 800px) {
+        .column {
+          flex: 50%;
+          max-width: 50%;
+        }
+      }
+
+      /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .column {
+          flex: 100%;
+          max-width: 100%;
+        }
+      }
+
+      body{
+        background-image: url("{{url_for('static', filename='img/vizbackground.jpg')}}") ;
+        background-repeat: no-repeat;
+        background-size: 1920px 1280px;
+        background-attachment: fixed;
+      }   
+      
+      p{
+        color: white;
+        font-size: 20px;
+        text-align: justify;
+      }
+
+      .group{
+        background-color: rgba(238, 238, 238, 0.5);
+      }
+
+      p{
+        font-size: 20px;
+        color: black;
+      }
+
+      h1{
+        color: blanchedalmond;
+        margin: 0 40%;
+        width: 100%;
+        font-size: 50px;
+        text-decoration: underline;
+      }
+  </style>
   <h1>Data Visualization</h1>
+  <div class="row">
+    <div class="column">
+      <div class="group"><img src="{{url_for('static', filename='img/impact_cumprobab.png')}}" /><p>In this we can see the time period and the respective probability of impact</p></div>
+      <div class="group"><img src="{{url_for('static', filename='img/impact_possible_3dscatter.png')}}"><p>This shows the possible impacts, magnitude and velocity of asteroids around the earth</p></div>
+      <div class="group"><img src="{{url_for('static', filename='img/impact3dscatterplot.png')}}"><p>The above one showed possible impacts, thisvisualisation shows us the cumulative  impact probability. The other two axes remain the same</p></div>
+      <div class="group"><img src="{{url_for('static', filename='img/impacts_periodicpossibility.png')}}"><p>This plot  shows the time period of an asteroid and and its respective point point in its orbiting lifetime where it may impact earth.</p></div>
+      <div class="group"> <img src="{{url_for('static', filename='img/impacts_violinplot.png')}}"><p>This is just a violin plot where in each feature is checked for its distribution and outliers. Zoom in to clearly vieweach feature  and its plot</p></div>
+      <div class="group"><img src="{{url_for('static', filename='img/impactsheatmap.png')}}"><p>This heatmap shows us the correlation of all the features in the dataset we  chose to train our model</p></div>
+       
+    </div>
+    <div class="column">
+      <div class="group"><img src="{{url_for('static', filename='img/object_distance_scatter.png')}}"><p>This plot shows us each type of asteroid along  with its perhilion and aphelion distance from earth. We cn see that each asteroid has been distributed evenyl through the perhilion distance  but on the other hand it is skewed more towards the left for  the aphelion distance</p></div>
+      <div class="group"><img src="{{url_for('static', filename='img/objectcountbar.png')}}"><p>A simple bar chart to show the number of each type of asteroid surrounding the earth</p></div>
+      <div class="group"><img src="{{url_for('static', filename='img/orbit_distanecmagnitude_scatter.png')}}"><p>This shows a scatter  plot of each typeofobject along with its distance from earth</p></div>
+      <div class="group"><img src="{{url_for('static', filename='img/orbit_distributionplot.png')}}"><p>This is again an interesting plot showing all the types of asteroid and how they are distributed with respect to their magnitudes.</p></div>
+      <div class="group"><img src="{{url_for('static', filename='img/orbit_objectlongitude_scatter.png')}}"><p>Scatter distribtution of all asteroids according to their longitude from earth</p></div>
+      <div class="group"><img src="{{url_for('static', filename='img/orbit_periodaxis_regplot.png')}}"><p>Regression plot for finding the relation between the orbit axis of an asteroid and its timeperiod for one revolution</p></div>
+      
+      
+      
+      
+      
+
+    </div>
+    <div class="column">
+      <div class="group"><img src="{{url_for('static', filename='img/orbit_violin.png')}}"><p>A violin chart like the previous one, but this shows the features of the dataset on which we trained our classification model.Zoom in to see each plot clearly</p></div>
+      <div class="group"><img src="{{url_for('static', filename='img/orbit3dplot.png')}}"><p>A 3d scatter plot showing how  different classes of asteroid are distributed according to the magnitude and distance</p></div>
+      <div class="group"><img src="{{url_for('static', filename='img/orbitheatmap.png')}}"><p>Heatmap showing the correlation of all the features which were used to create  our classification model</p></div>
+      <div class="group"><img src="{{url_for('static', filename='img/orbitkdeplot.png')}}"><p>A density plot which further helps us to find the distrbution of asteroids overvarious distances</p></div>
+      <div class="group"><img src="{{url_for('static', filename='img/orbitobjects_kdeplot.png')}}"><p>A kdeplotto see the normal curvesof each object and how skewed or distributed they are with respect to their orbit axis</p></div>
+
+    </div>
+  </div>
+
+  
 {% endblock %}
