@@ -4,74 +4,20 @@
 Visualizations
 {% endblock %}
 
+{% block links %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/visulization.css') }}">
+{% endblock %}
+
 {% block content %}
   <style>
-      .row {
-        display: flex;
-        flex-wrap: wrap;
-        margin-left: 10rem;
-        margin-bottom: 10rem;
-      }
-
-      /* Create four equal columns that sits next to each other */
-      .column {
-        flex: 25%;
-        max-width: 25%;
-        padding: 0 10px;
-        margin: 2rem;
-      }
-
-      .column img {
-        margin-top: 8px;
-        vertical-align: middle;
-        width: 100%;
-      }
-
-      /* Responsive layout - makes a two column-layout instead of four columns */
-      @media screen and (max-width: 800px) {
-        .column {
-          flex: 50%;
-          max-width: 50%;
-        }
-      }
-
-      /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-      @media screen and (max-width: 600px) {
-        .column {
-          flex: 100%;
-          max-width: 100%;
-        }
-      }
-
-      body{
-        background-image: url("{{url_for('static', filename='img/vizbackground.jpg')}}") ;
-        background-repeat: no-repeat;
-        background-size: 1920px 1280px;
-        background-attachment: fixed;
-      }   
-      
-      p{
-        color: white;
-        font-size: 20px;
-        text-align: justify;
-      }
-
-      .group{
-        background-color: rgba(238, 238, 238, 0.5);
-      }
-
-      p{
-        font-size: 20px;
-        color: black;
-      }
-
-      h1{
-        color: blanchedalmond;
-        margin: 0 40%;
-        width: 100%;
-        font-size: 50px;
-        text-decoration: underline;
-      }
+    body {
+      background-image: url("{{url_for('static',filename='img/vizbackground.jpg')}}");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      overflow-x: hidden;
+    }
   </style>
   <h1>Data Visualization</h1>
   <div class="row">

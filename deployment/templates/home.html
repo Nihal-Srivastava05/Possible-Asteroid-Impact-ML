@@ -5,12 +5,17 @@ Home page
 {% endblock %}
 
 {% block content %}
-<h1>Home Page</h1><br><br>
+<style>
+  .page_content {
+    padding: 0;
+  }
+</style>
 <div class="video-container">
   <video autoplay muted loop>
       <source src="{{url_for('static', filename='video/Night Sky full of Stars.mp4')}}" type="video/mp4" />
   </video>
   <div class="caption">
+    <h1>Home Page</h1><br><br>
     <h3>About Our Website</h3><br><br>
     <p style="font-size: large;">Here you can basically study, analyze and visualize the impacts of various types/classes of asteroids which have a
       decent probability to hit our planet. We have considered the Cumulative Impact Probability, the asteroid velocity,

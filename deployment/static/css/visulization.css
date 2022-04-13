@@ -1,0 +1,56 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10rem;
+  margin-bottom: 10rem;
+}
+
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 10px;
+  margin: 2rem;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+p {
+  color: white;
+  font-size: 20px;
+  text-align: justify;
+}
+
+.group {
+  background-color: rgba(238, 238, 238, 0.5);
+}
+
+p {
+  font-size: 20px;
+  color: black;
+}
+
+h1 {
+  color: blanchedalmond;
+  margin: 0 40%;
+  width: 100%;
+  font-size: 50px;
+  text-decoration: underline;
+}
